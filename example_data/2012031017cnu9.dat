@@ -1,0 +1,46 @@
+<Document-Order>
+    <Order-Header>
+        <OrderNumber>20201203040201</OrderNumber>
+        <VendorOrderNumber>779928537520</VendorOrderNumber>
+        <OrderDate>2020-12-03</OrderDate>
+        <OrderTime>12:00</OrderTime>
+        <DocumentFunctionCode>R</DocumentFunctionCode>
+        <MessageType>CO</MessageType>
+    </Order-Header>
+    <Order-Parties>
+        <Buyer>
+            <ILN>4761</ILN>
+        </Buyer>
+        <Seller>
+            <ILN>28537</ILN>
+        </Seller>
+        <DeliveryPoint>
+            <ILN>4761</ILN>
+            <Name>VOLVO POLSKA SP. Z.O.O.</Name>
+        </DeliveryPoint>
+        <ShipFrom>
+            <ILN>28537</ILN>
+        </ShipFrom>
+    </Order-Parties>
+    <Order-Lines>
+        <Line>
+            <Line-Item>
+                <LineNumber>3</LineNumber>
+                <EAN>22578808</EAN>
+                <OrderedQuantity>0</OrderedQuantity>
+                <UnitOfMeasure>C62</UnitOfMeasure>
+                <ExpectedDeliveryDate>2020-12-03</ExpectedDeliveryDate>
+                <ExpectedDeliveryTime>12:00</ExpectedDeliveryTime>
+            </Line-Item>
+            <Line-Parties>
+                <DeliveryPoint>
+                    <ILN>520</ILN>
+                    <Name>520</Name>
+                </DeliveryPoint>
+            </Line-Parties>
+        </Line>
+    </Order-Lines>
+    <Order-Summary>
+        <TotalLines>1</TotalLines>
+    </Order-Summary>
+</Document-Order>
