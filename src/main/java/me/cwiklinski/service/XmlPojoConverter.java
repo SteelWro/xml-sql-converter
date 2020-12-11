@@ -1,4 +1,4 @@
-package me.cwiklinski;
+package me.cwiklinski.service;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
