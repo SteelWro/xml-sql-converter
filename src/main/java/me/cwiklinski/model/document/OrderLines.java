@@ -12,6 +12,14 @@ public class OrderLines implements Serializable {
     @XmlElement(name = "Line")
     private Line line;
 
+    public Line getLine() {
+        return line;
+    }
+
+    public void setLine(Line line) {
+        this.line = line;
+    }
+
     @Override
     public String toString() {
         return "OrderLines{" +

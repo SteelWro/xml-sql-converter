@@ -10,6 +10,14 @@ import java.io.Serializable;
 public class Buyer implements Serializable {
     private String ILN;
 
+    public String getILN() {
+        return ILN;
+    }
+
+    public void setILN(String ILN) {
+        this.ILN = ILN;
+    }
+
     @Override
     public String toString() {
         return "Buyer{" +

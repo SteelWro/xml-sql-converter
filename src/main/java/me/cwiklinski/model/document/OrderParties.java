@@ -21,6 +21,37 @@ public class OrderParties implements Serializable {
     @XmlElement(name = "ShipFrom")
     private ShipFrom shipFrom;
 
+    public Buyer getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(Buyer buyer) {
+        this.buyer = buyer;
+    }
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
+    }
+
+    public DeliveryPoint getDeliveryPoint() {
+        return deliveryPoint;
+    }
+
+    public void setDeliveryPoint(DeliveryPoint deliveryPoint) {
+        this.deliveryPoint = deliveryPoint;
+    }
+
+    public ShipFrom getShipFrom() {
+        return shipFrom;
+    }
+
+    public void setShipFrom(ShipFrom shipFrom) {
+        this.shipFrom = shipFrom;
+    }
 
     @Override
     public String toString() {

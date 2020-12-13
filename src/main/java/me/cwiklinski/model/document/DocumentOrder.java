@@ -21,6 +21,23 @@ public class DocumentOrder implements Serializable {
     @XmlElement(name = "Order-Summary")
     private OrderSummary orderSummary;
 
+    public OrderHeader getOrderHeader() {
+        return orderHeader;
+    }
+
+
+    public OrderParties getOrderParties() {
+        return orderParties;
+    }
+
+    public OrderLines getOrderLines() {
+        return orderLines;
+    }
+
+    public OrderSummary getOrderSummary() {
+        return orderSummary;
+    }
+
     @Override
     public String toString() {
         return "DocumentOrder{" +

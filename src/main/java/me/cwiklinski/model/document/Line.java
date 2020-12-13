@@ -15,6 +15,22 @@ public class Line implements Serializable {
     @XmlElement(name = "Line-Parties")
     private LineParties lineParties;
 
+    public LineItem getLineItem() {
+        return lineItem;
+    }
+
+    public void setLineItem(LineItem lineItem) {
+        this.lineItem = lineItem;
+    }
+
+    public LineParties getLineParties() {
+        return lineParties;
+    }
+
+    public void setLineParties(LineParties lineParties) {
+        this.lineParties = lineParties;
+    }
+
     @Override
     public String toString() {
         return "Line{" +

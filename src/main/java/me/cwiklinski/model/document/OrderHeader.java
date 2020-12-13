@@ -15,6 +15,54 @@ public class OrderHeader implements Serializable {
     private String DocumentFunctionCode;
     private String MessageType;
 
+    public String getOrderNumber() {
+        return OrderNumber;
+    }
+
+    public void setOrderNumber(String orderNumber) {
+        OrderNumber = orderNumber;
+    }
+
+    public String getVendorOrderNumber() {
+        return VendorOrderNumber;
+    }
+
+    public void setVendorOrderNumber(String vendorOrderNumber) {
+        VendorOrderNumber = vendorOrderNumber;
+    }
+
+    public String getOrderDate() {
+        return OrderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        OrderDate = orderDate;
+    }
+
+    public String getOrderTime() {
+        return OrderTime;
+    }
+
+    public void setOrderTime(String orderTime) {
+        OrderTime = orderTime;
+    }
+
+    public String getDocumentFunctionCode() {
+        return DocumentFunctionCode;
+    }
+
+    public void setDocumentFunctionCode(String documentFunctionCode) {
+        DocumentFunctionCode = documentFunctionCode;
+    }
+
+    public String getMessageType() {
+        return MessageType;
+    }
+
+    public void setMessageType(String messageType) {
+        MessageType = messageType;
+    }
+
     @Override
     public String toString() {
         return "OrderHeader{" +

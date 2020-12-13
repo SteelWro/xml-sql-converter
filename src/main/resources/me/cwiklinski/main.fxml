@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.cwiklinski.MainController">
+   <children>
+      <Button fx:id="buttonSave" layoutX="51.0" layoutY="62.0" mnemonicParsing="false" onAction="#convertFile" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: black;" text="Zapisz do bazy" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </Button>
+      <ImageView fitHeight="56.0" fitWidth="66.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/me/cwiklinski/volvo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="59.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="144.0" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="306.0" AnchorPane.topAnchor="21.0">
+         <image>
+            <Image url="@/me/cwiklinski/im_logo.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="TOP_RIGHT" layoutX="167.0" layoutY="68.0" prefHeight="50.0" prefWidth="66.0">
+         <children>
+            <Circle fx:id="circleOne" fill="#ebebeb00" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" visible="false">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="3.0" right="3.0" top="20.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="circleTwo" fill="#ebebeb00" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" visible="false">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="3.0" right="3.0" top="20.0" />
+               </HBox.margin>
+            </Circle>
+            <Circle fx:id="circleThree" fill="#ebebeb00" radius="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" visible="false">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="3.0" right="3.0" top="20.0" />
+               </HBox.margin>
+            </Circle>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
