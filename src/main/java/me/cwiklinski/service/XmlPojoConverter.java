@@ -27,27 +27,14 @@ public class XmlPojoConverter {
         return (Order) jaxbUnmarshaller.unmarshal(iS);
     }
 
-    public DocumentOrder UnmarshalMyFile(File file) throws JAXBException, FileNotFoundException {
+    public Order UnmarshalMyFile(File file) throws JAXBException, FileNotFoundException {
         if (file == null) {
             throw new FileNotFoundException();
         }
-        JAXBContext jaxbContext = JAXBContext.newInstance(DocumentOrder.class);
+        JAXBContext jaxbContext = JAXBContext.newInstance(Order.class);
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-        return (DocumentOrder) jaxbUnmarshaller.unmarshal(file);
+        return (Order) jaxbUnmarshaller.unmarshal(file);
     }
-
-//    public void archiveMyFile() throws IOException {
-//        File file = new File(Path.of(Constants.ROOT_PATH, Constants.FILE_NAME).toString());
-//        if (!file.exists()) {
-//            throw new FileNotFoundException();
-//        }
-//
-//        if (!archiveDirectory.exists()) {
-//            archiveDirectory.mkdir();
-//        }
-//
-//        file.renameTo(new File(Path.of(Constants.ROOT_PATH, Constants.ARCHIVE_FOLDER_NAME, Constants.FILE_NAME).toString()));
-//    }
 
     public void archiveMyFile(File file) throws FileNotFoundException {
         if (!file.exists()) {

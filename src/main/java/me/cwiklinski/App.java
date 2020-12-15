@@ -1,9 +1,11 @@
 package me.cwiklinski;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import me.cwiklinski.configuration.Constants;
 
@@ -12,7 +14,7 @@ import java.io.IOException;
 /**
  * JavaFX App
  */
-public class App extends Application  {
+public class App extends Application {
 
     private static Scene scene;
 

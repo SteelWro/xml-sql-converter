@@ -7,6 +7,7 @@ import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 import me.cwiklinski.configuration.Constants;
@@ -30,11 +31,16 @@ import java.util.Arrays;
 
 public class MainController {
 
-    private Alert dialog;
-
+    private Alert alertDialog;
     public AnimationFX bounceOne;
     public AnimationFX bounceTwo;
     public AnimationFX bounceThree;
+
+    @FXML
+    public Label version;
+
+    @FXML
+    public Label fileName;
 
     @FXML
     public Circle circleOne;
@@ -47,6 +53,7 @@ public class MainController {
 
     @FXML
     public void initialize() {
+        version.setText(Constants.VERSION);
     }
 
     @FXML
@@ -59,9 +66,11 @@ public class MainController {
     class ConvertService extends Service<Void> {
 
         XmlPojoConverter xmlPojoConverter;
+        File[] files;
 
         public ConvertService() {
             this.xmlPojoConverter = new XmlPojoConverter();
+            files = new File[0];
 
         }
 
@@ -78,21 +87,21 @@ public class MainController {
                 protected void succeeded() {
                     super.succeeded();
                     stopLoading();
-                    System.out.println("Udało się!");
+                    showAlert("Udało się", "Zapisano obiekty do bazy", "Ilość zapisanych obiektów: " + files.length, Alert.AlertType.INFORMATION);
+                    changeFileLabel("");
                 }
 
                 @Override
                 protected void failed() {
                     super.failed();
                     stopLoading();
-                    System.out.println("Nie udało się!");
+                    changeFileLabel("");
                 }
 
                 @Override
                 protected void running() {
                     super.running();
                     animateLoading();
-                    System.out.println("Zaczynamy");
                 }
             };
             return task;
@@ -100,8 +109,8 @@ public class MainController {
 
         public void init() {
             xmlPojoConverter = new XmlPojoConverter();
-            File[] files = new File[0];
             try {
+                //Pobranie wszystkich nazw plików
                 files = xmlPojoConverter.getAllFilesNames(Path.of(Constants.ROOT_PATH).toFile());
             } catch (FileNotFoundException throwables) {
                 showAlert("Błąd", "Problem z konwersją pliku", throwables.getMessage(), Alert.AlertType.ERROR);
@@ -117,7 +126,13 @@ public class MainController {
             //Pętla po nazwach plików i ich przekonwertowanie
             Arrays.stream(files).forEach(file -> {
                 convertFile(Path.of(Constants.ROOT_PATH, file.getName()).toString());
-                System.out.println(file.getName());
+                changeFileLabel(file.getName());
+            });
+        }
+
+        private void changeFileLabel(String name) {
+            Platform.runLater(() -> {
+                fileName.setText(name);
             });
         }
 
@@ -164,16 +179,15 @@ public class MainController {
                     showAlert("Błąd", "Nie można zamknąć połączenia", throwables.getMessage(), Alert.AlertType.ERROR);
                 }
             }
-            //showAlert("Udało się", "Zapisano obiekty do bazy", "Ilość zapisanych obiektów: " + order.getDocumentOrders().size(), Alert.AlertType.INFORMATION);
         }
 
         private void showAlert(String title, String header, String content, Alert.AlertType type) {
             Platform.runLater(() -> {
-                dialog = new Alert(type);
-                dialog.setTitle(title);
-                dialog.setHeaderText(header);
-                dialog.setContentText(content);
-                dialog.showAndWait();
+                alertDialog = new Alert(type);
+                alertDialog.setTitle(title);
+                alertDialog.setHeaderText(header);
+                alertDialog.setContentText(content);
+                alertDialog.showAndWait();
             });
 
         }
