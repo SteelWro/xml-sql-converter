@@ -1,4 +1,4 @@
-package me.cwiklinski;
+package me.cwiklinski.service;
 
 import me.cwiklinski.configuration.DAOConfiguration;
 
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class JDBCPostgreSQLConnect {
 
-    Connection getConnection() throws SQLException {
+    public Connection getConnection() throws SQLException {
         Connection conn = DriverManager.getConnection(DAOConfiguration.URL, DAOConfiguration.USER, DAOConfiguration.PASSWORD);
         return conn;
     }

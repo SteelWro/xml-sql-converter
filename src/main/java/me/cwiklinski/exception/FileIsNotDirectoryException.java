@@ -1,4 +1,4 @@
-package me.cwiklinski.service;
+package me.cwiklinski.exception;
 
 public class FileIsNotDirectoryException extends Exception {
     public FileIsNotDirectoryException() {
